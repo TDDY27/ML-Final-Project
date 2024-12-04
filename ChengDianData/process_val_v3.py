@@ -220,15 +220,16 @@ for t in range(int(sys.argv[1]),int(sys.argv[2])):
         nc_data = nc_data.drop(['away_team_is_'+name],axis = 1)
 
     for c in val.columns:
-        data[c] = data[c].fillna(data[c].mean())
-        val[c] = val[c].fillna(data[c].mean())
-    data.to_csv("./datac3_t{}/raw_data_full_column.csv".format(t), index=False)
+        if c not in ['home_team_win']:
+            data[c] = data[c].fillna(data[c].mean())
+            val[c] = val[c].fillna(data[c].mean())
+    data.to_csv("./datac3_t{}/raw_vdata_full_column.csv".format(t), index=False)
     val.to_csv("./datac3_t{}/raw_val_full_column.csv".format(t), index=False)
 
     for c in nc_val.columns:
         nc_data[c] = nc_data[c].fillna(nc_data[c].mean())
         nc_val[c] = nc_val[c].fillna(nc_val[c].mean())
-    nc_data.to_csv("./datac3_t{}/raw_data.csv".format(t), index=False)
+    nc_data.to_csv("./datac3_t{}/raw_vdata.csv".format(t), index=False)
     nc_val.to_csv("./datac3_t{}/raw_val.csv".format(t), index=False)
 
     nc_std_val = nc_val
@@ -237,32 +238,35 @@ for t in range(int(sys.argv[1]),int(sys.argv[2])):
     std_data = data
 
     for c in val.columns:
-        val[c] = (val[c] - data[c].min()) / (data[c].max() - data[c].min())
-        data[c] = (data[c] - data[c].min()) / (data[c].max() - data[c].min())
+        if c not in ['home_team_win']:
+            val[c] = (val[c] - data[c].min()) / (data[c].max() - data[c].min())
+            data[c] = (data[c] - data[c].min()) / (data[c].max() - data[c].min())
     for c in val.columns:
-        std_val[c] = (std_val[c] - std_data[c].mean()) / std_data[c].std()
-        std_data[c] = (std_data[c] - std_data[c].mean()) / std_data[c].std()
-    for name in name_list:
-        val['home_team_is_'+name] /= 1000
-        val['away_team_is_'+name] /= 1000
-        data['home_team_is_'+name] /= 1000
-        data['away_team_is_'+name] /= 1000
-        std_val['home_team_is_'+name] /= 1000
-        std_val['away_team_is_'+name] /= 1000
-        std_data['home_team_is_'+name] /= 1000
-        std_data['away_team_is_'+name] /= 1000
-    data.to_csv("./datac3_t{}/norm_data_full_column.csv".format(t), index=False)
+        if c not in ['home_team_win']:
+            std_val[c] = (std_val[c] - std_data[c].mean()) / std_data[c].std()
+            std_data[c] = (std_data[c] - std_data[c].mean()) / std_data[c].std()
+    # for name in name_list:
+    #     val['home_team_is_'+name] /= 1000
+    #     val['away_team_is_'+name] /= 1000
+    #     data['home_team_is_'+name] /= 1000
+    #     data['away_team_is_'+name] /= 1000
+    #     std_val['home_team_is_'+name] /= 1000
+    #     std_val['away_team_is_'+name] /= 1000
+    #     std_data['home_team_is_'+name] /= 1000
+    #     std_data['away_team_is_'+name] /= 1000
+    data.to_csv("./datac3_t{}/norm_vdata_full_column.csv".format(t), index=False)
     val.to_csv("./datac3_t{}/norm_val_full_column.csv".format(t), index=False)
-    std_data.to_csv("./datac3_t{}/std_data_full_column.csv".format(t), index=False)
+    std_data.to_csv("./datac3_t{}/std_vdata_full_column.csv".format(t), index=False)
     std_val.to_csv("./datac3_t{}/std_val_full_column.csv".format(t), index=False)
 
     for c in nc_val.columns:
         nc_val[c] = (nc_val[c] - nc_data[c].min()) / (nc_data[c].max() - nc_data[c].min())
         nc_data[c] = (nc_data[c] - nc_data[c].min()) / (nc_data[c].max() - nc_data[c].min())
     for c in nc_std_val.columns:
-        nc_std_val[c] = (nc_std_val[c] - nc_std_data[c].mean()) / nc_std_data[c].std()
-        nc_std_data[c] = (nc_std_data[c] - nc_std_data[c].mean()) / nc_std_data[c].std()
-    nc_data.to_csv("./datac3_t{}/norm_data.csv".format(t), index=False)
+        if c not in ['home_team_win']:
+            nc_std_val[c] = (nc_std_val[c] - nc_std_data[c].mean()) / nc_std_data[c].std()
+            nc_std_data[c] = (nc_std_data[c] - nc_std_data[c].mean()) / nc_std_data[c].std()
+    nc_data.to_csv("./datac3_t{}/norm_vdata.csv".format(t), index=False)
     nc_val.to_csv("./datac3_t{}/norm_val.csv".format(t), index=False)
-    nc_std_data.to_csv("./datac3_t{}/std_data.csv".format(t), index=False)
+    nc_std_data.to_csv("./datac3_t{}/std_vdata.csv".format(t), index=False)
     nc_std_val.to_csv("./datac3_t{}/std_val.csv".format(t), index=False)

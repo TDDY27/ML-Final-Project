@@ -237,8 +237,9 @@ for t in range(int(sys.argv[1]),int(sys.argv[2])):
         nc_data = nc_data.drop(['away_team_is_'+name],axis = 1)
 
     for c in test.columns:
-        data[c] = data[c].fillna(data[c].mean())
-        test[c] = test[c].fillna(data[c].mean())
+        if c not in ['home_team_win']:
+            data[c] = data[c].fillna(data[c].mean())
+            test[c] = test[c].fillna(data[c].mean())
     data.to_csv("./datac3_t{}/raw_data_full_column.csv".format(t), index=False)
     test.to_csv("./datac3_t{}/raw_test1_full_column.csv".format(t), index=False)
 
@@ -254,31 +255,35 @@ for t in range(int(sys.argv[1]),int(sys.argv[2])):
     std_data = data
 
     for c in test.columns:
-        test[c] = (test[c] - data[c].min()) / (data[c].max() - data[c].min())
-        data[c] = (data[c] - data[c].min()) / (data[c].max() - data[c].min())
+        if c not in ['home_team_win']:
+            test[c] = (test[c] - data[c].min()) / (data[c].max() - data[c].min())
+            data[c] = (data[c] - data[c].min()) / (data[c].max() - data[c].min())
     for c in test.columns:
-        std_test[c] = (std_test[c] - std_data[c].mean()) / std_data[c].std()
-        std_data[c] = (std_data[c] - std_data[c].mean()) / std_data[c].std()
-    for name in name_list:
-        test['home_team_is_'+name] /= 1000
-        test['away_team_is_'+name] /= 1000
-        data['home_team_is_'+name] /= 1000
-        data['away_team_is_'+name] /= 1000
-        std_test['home_team_is_'+name] /= 1000
-        std_test['away_team_is_'+name] /= 1000
-        std_data['home_team_is_'+name] /= 1000
-        std_data['away_team_is_'+name] /= 1000
+        if c not in ['home_team_win']:
+            std_test[c] = (std_test[c] - std_data[c].mean()) / std_data[c].std()
+            std_data[c] = (std_data[c] - std_data[c].mean()) / std_data[c].std()
+    # for name in name_list:
+    #     test['home_team_is_'+name] /= 1000
+    #     test['away_team_is_'+name] /= 1000
+    #     data['home_team_is_'+name] /= 1000
+    #     data['away_team_is_'+name] /= 1000
+    #     std_test['home_team_is_'+name] /= 1000
+    #     std_test['away_team_is_'+name] /= 1000
+    #     std_data['home_team_is_'+name] /= 1000
+    #     std_data['away_team_is_'+name] /= 1000
     data.to_csv("./datac3_t{}/norm_data_full_column.csv".format(t), index=False)
     test.to_csv("./datac3_t{}/norm_test1_full_column.csv".format(t), index=False)
     std_data.to_csv("./datac3_t{}/std_data_full_column.csv".format(t), index=False)
     std_test.to_csv("./datac3_t{}/std_test1_full_column.csv".format(t), index=False)
 
     for c in nc_test.columns:
-        nc_test[c] = (nc_test[c] - nc_data[c].min()) / (nc_data[c].max() - nc_data[c].min())
-        nc_data[c] = (nc_data[c] - nc_data[c].min()) / (nc_data[c].max() - nc_data[c].min())
+        if c not in ['home_team_win']:
+            nc_test[c] = (nc_test[c] - nc_data[c].min()) / (nc_data[c].max() - nc_data[c].min())
+            nc_data[c] = (nc_data[c] - nc_data[c].min()) / (nc_data[c].max() - nc_data[c].min())
     for c in nc_std_test.columns:
-        nc_std_test[c] = (nc_std_test[c] - nc_std_data[c].mean()) / nc_std_data[c].std()
-        nc_std_data[c] = (nc_std_data[c] - nc_std_data[c].mean()) / nc_std_data[c].std()
+        if c not in ['home_team_win']:
+            nc_std_test[c] = (nc_std_test[c] - nc_std_data[c].mean()) / nc_std_data[c].std()
+            nc_std_data[c] = (nc_std_data[c] - nc_std_data[c].mean()) / nc_std_data[c].std()
     nc_data.to_csv("./datac3_t{}/norm_data.csv".format(t), index=False)
     nc_test.to_csv("./datac3_t{}/norm_test1.csv".format(t), index=False)
     nc_std_data.to_csv("./datac3_t{}/std_data.csv".format(t), index=False)
