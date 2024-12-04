@@ -228,8 +228,8 @@ for t in range(int(sys.argv[1]),int(sys.argv[2])):
         if s not in ["home_team_win"]:
             test[s] = test[s].apply(float)
 
-    nc_data = data
-    nc_test = test
+    nc_data = data.copy()
+    nc_test = test.copy()
     for name in name_list:
         nc_test = nc_test.drop(['home_team_is_'+name],axis = 1)
         nc_test = nc_test.drop(['away_team_is_'+name],axis = 1)
@@ -249,28 +249,29 @@ for t in range(int(sys.argv[1]),int(sys.argv[2])):
     nc_data.to_csv("./datac3_t{}/raw_data.csv".format(t), index=False)
     nc_test.to_csv("./datac3_t{}/raw_test1.csv".format(t), index=False)
 
-    nc_std_test = nc_test
-    nc_std_data = nc_data
-    std_test = test
-    std_data = data
+    nc_std_test = nc_test.copy()
+    nc_std_data = nc_data.copy()
+    std_test = test.copy()
+    std_data = data.copy()
 
-    for c in test.columns:
+    for c in nc_test.columns:
         if c not in ['home_team_win']:
             test[c] = (test[c] - data[c].min()) / (data[c].max() - data[c].min())
             data[c] = (data[c] - data[c].min()) / (data[c].max() - data[c].min())
-    for c in test.columns:
+    for c in nc_test.columns:
         if c not in ['home_team_win']:
             std_test[c] = (std_test[c] - std_data[c].mean()) / std_data[c].std()
             std_data[c] = (std_data[c] - std_data[c].mean()) / std_data[c].std()
-    # for name in name_list:
-    #     test['home_team_is_'+name] /= 1000
-    #     test['away_team_is_'+name] /= 1000
-    #     data['home_team_is_'+name] /= 1000
-    #     data['away_team_is_'+name] /= 1000
-    #     std_test['home_team_is_'+name] /= 1000
-    #     std_test['away_team_is_'+name] /= 1000
-    #     std_data['home_team_is_'+name] /= 1000
-    #     std_data['away_team_is_'+name] /= 1000
+    for name in name_list:
+        test['home_team_is_'+name] /= 2
+        test['away_team_is_'+name] /= 2
+        data['home_team_is_'+name] /= 2
+        data['away_team_is_'+name] /= 2
+        std_test['home_team_is_'+name] /= 2
+        std_test['away_team_is_'+name] /= 2
+        std_data['home_team_is_'+name] /= 2
+        std_data['away_team_is_'+name] /= 2
+
     data.to_csv("./datac3_t{}/norm_data_full_column.csv".format(t), index=False)
     test.to_csv("./datac3_t{}/norm_test1_full_column.csv".format(t), index=False)
     std_data.to_csv("./datac3_t{}/std_data_full_column.csv".format(t), index=False)

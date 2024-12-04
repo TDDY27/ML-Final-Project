@@ -208,11 +208,11 @@ for t in range(int(sys.argv[1]),int(sys.argv[2])):
     for s in bool_list:
         data[s] = data[s].apply(float)
 
-    val = data.loc[range((9*data_N)//10,data_N)].reset_index(drop=True)
-    data = data.loc[range(0,(9*data_N)//10)]
+    val = data.loc[range((9*data_N)//10,data_N)].reset_index(drop=True).copy()
+    data = data.loc[range(0,(9*data_N)//10)].copy()
 
-    nc_data = data
-    nc_val = val
+    nc_data = data.copy()
+    nc_val = val.copy()
     for name in name_list:
         nc_val = nc_val.drop(['home_team_is_'+name],axis = 1)
         nc_val = nc_val.drop(['away_team_is_'+name],axis = 1)
@@ -232,36 +232,37 @@ for t in range(int(sys.argv[1]),int(sys.argv[2])):
     nc_data.to_csv("./datac3_t{}/raw_vdata.csv".format(t), index=False)
     nc_val.to_csv("./datac3_t{}/raw_val.csv".format(t), index=False)
 
-    nc_std_val = nc_val
-    nc_std_data = nc_data
-    std_val = val
-    std_data = data
+    nc_std_val = nc_val.copy()
+    nc_std_data = nc_data.copy()
+    std_val = val.copy()
+    std_data = data.copy()
 
-    for c in val.columns:
+    for c in nc_val.columns:
         if c not in ['home_team_win']:
             val[c] = (val[c] - data[c].min()) / (data[c].max() - data[c].min())
             data[c] = (data[c] - data[c].min()) / (data[c].max() - data[c].min())
-    for c in val.columns:
+    for c in nc_val.columns:
         if c not in ['home_team_win']:
             std_val[c] = (std_val[c] - std_data[c].mean()) / std_data[c].std()
             std_data[c] = (std_data[c] - std_data[c].mean()) / std_data[c].std()
-    # for name in name_list:
-    #     val['home_team_is_'+name] /= 1000
-    #     val['away_team_is_'+name] /= 1000
-    #     data['home_team_is_'+name] /= 1000
-    #     data['away_team_is_'+name] /= 1000
-    #     std_val['home_team_is_'+name] /= 1000
-    #     std_val['away_team_is_'+name] /= 1000
-    #     std_data['home_team_is_'+name] /= 1000
-    #     std_data['away_team_is_'+name] /= 1000
+    for name in name_list:
+        val['home_team_is_'+name] /= 2
+        val['away_team_is_'+name] /= 2
+        data['home_team_is_'+name] /= 2
+        data['away_team_is_'+name] /= 2
+        std_val['home_team_is_'+name] /= 2
+        std_val['away_team_is_'+name] /= 2
+        std_data['home_team_is_'+name] /= 2
+        std_data['away_team_is_'+name] /= 2
     data.to_csv("./datac3_t{}/norm_vdata_full_column.csv".format(t), index=False)
     val.to_csv("./datac3_t{}/norm_val_full_column.csv".format(t), index=False)
     std_data.to_csv("./datac3_t{}/std_vdata_full_column.csv".format(t), index=False)
     std_val.to_csv("./datac3_t{}/std_val_full_column.csv".format(t), index=False)
 
     for c in nc_val.columns:
-        nc_val[c] = (nc_val[c] - nc_data[c].min()) / (nc_data[c].max() - nc_data[c].min())
-        nc_data[c] = (nc_data[c] - nc_data[c].min()) / (nc_data[c].max() - nc_data[c].min())
+        if c not in ['home_team_win']:
+            nc_val[c] = (nc_val[c] - nc_data[c].min()) / (nc_data[c].max() - nc_data[c].min())
+            nc_data[c] = (nc_data[c] - nc_data[c].min()) / (nc_data[c].max() - nc_data[c].min())
     for c in nc_std_val.columns:
         if c not in ['home_team_win']:
             nc_std_val[c] = (nc_std_val[c] - nc_std_data[c].mean()) / nc_std_data[c].std()
