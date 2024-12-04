@@ -1,27 +1,30 @@
 import csv
 import numpy as np
+import sys
 
 all_data = []
 v_data = []
 val = []
 test = []
 
-with open('./c3_norm_data_full_column.csv', newline='') as csvfile:
+t = sys.argv[1]
+
+with open('./datac3_t{}/norm_data_full_column.csv'.format(t), newline='') as csvfile:
     rows = csv.reader(csvfile)
     for r in rows:
         all_data.append(r)
 
-with open('./c3_norm_vdata_full_column.csv', newline='') as csvfile:
+with open('./datac3_t{}/norm_vdata_full_column.csv'.format(t), newline='') as csvfile:
     rows = csv.reader(csvfile)
     for r in rows:
         v_data.append(r)
 
-with open('./c3_norm_val_full_column.csv', newline='') as csvfile:
+with open('./datac3_t{}/norm_val_full_column.csv'.format(t), newline='') as csvfile:
     rows = csv.reader(csvfile)
     for r in rows:
         val.append(r)
 
-with open('./c3_norm_test1_full_column.csv', newline='') as csvfile:
+with open('./datac3_t{}/norm_test1_full_column.csv'.format(t), newline='') as csvfile:
     rows = csv.reader(csvfile)
     for r in rows:
         test.append(r)

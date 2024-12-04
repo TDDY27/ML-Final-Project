@@ -1,27 +1,30 @@
 import csv
 import numpy as np
+import sys
 
 all_data = []
 v_data = []
 val = []
 test = []
 
-with open('./c3_norm_data.csv', newline='') as csvfile:
+t = sys.argv[1]
+
+with open('./datac3_t{}/norm_data.csv'.format(t), newline='') as csvfile:
     rows = csv.reader(csvfile)
     for r in rows:
         all_data.append(r)
 
-with open('./c3_norm_vdata.csv', newline='') as csvfile:
+with open('./datac3_t{}/norm_vdata.csv'.format(t), newline='') as csvfile:
     rows = csv.reader(csvfile)
     for r in rows:
         v_data.append(r)
 
-with open('./c3_norm_val.csv', newline='') as csvfile:
+with open('./datac3_t{}/norm_val.csv'.format(t), newline='') as csvfile:
     rows = csv.reader(csvfile)
     for r in rows:
         val.append(r)
 
-with open('./c3_norm_test1.csv', newline='') as csvfile:
+with open('./datac3_t{}/norm_test1.csv'.format(t), newline='') as csvfile:
     rows = csv.reader(csvfile)
     for r in rows:
         test.append(r)
