@@ -159,13 +159,6 @@ for t in range(int(sys.argv[1]),int(sys.argv[2])):
         std_test2['away_team_is_'+name] /= 2
         std_data['home_team_is_'+name] /= 2
         std_data['away_team_is_'+name] /= 2
-    for season in season_list:
-        test1['season_is_'+str(season)] = 0
-        test2['season_is_'+str(season)] = 0
-        data['season_is_'+str(season)] = 0
-        std_test1['season_is_'+str(season)] = 0
-        std_test2['season_is_'+str(season)] = 0
-        std_data['season_is_'+str(season)] = 0
     for team_season in team_season_list:
         test1['home_team_season_is_'+team_season] /= 2
         test1['away_team_season_is_'+team_season] /= 2

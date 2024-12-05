@@ -198,11 +198,11 @@ for t in range(int(sys.argv[1]),int(sys.argv[2])):
     std_data = data.copy()
 
     for c in val.columns:
-        if c not in ['home_team_win']:
+        if c not in ['home_team_win'] and (data[c].max() - data[c].min()) != 0:
             val[c] = (val[c] - data[c].min()) / (data[c].max() - data[c].min())
             data[c] = (data[c] - data[c].min()) / (data[c].max() - data[c].min())
     for c in val.columns:
-        if c not in ['home_team_win']:
+        if c not in ['home_team_win'] and std_data[c].std() != 0:
             std_val[c] = (std_val[c] - std_data[c].mean()) / std_data[c].std()
             std_data[c] = (std_data[c] - std_data[c].mean()) / std_data[c].std()
     for name in name_list:
@@ -214,11 +214,6 @@ for t in range(int(sys.argv[1]),int(sys.argv[2])):
         std_val['away_team_is_'+name] /= 2
         std_data['home_team_is_'+name] /= 2
         std_data['away_team_is_'+name] /= 2
-    for season in season_list:
-        val['season_is_'+str(season)] = 0
-        data['season_is_'+str(season)] = 0
-        std_val['season_is_'+str(season)] = 0
-        std_data['season_is_'+str(season)] = 0
     for team_season in team_season_list:
         val['home_team_season_is_'+team_season] /= 2
         val['away_team_season_is_'+team_season] /= 2
