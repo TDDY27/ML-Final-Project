@@ -316,12 +316,12 @@ for t in range(int(sys.argv[1]),int(sys.argv[2])):
     std_data = data.copy()
 
     for c in test1.columns:
-        if c not in ['home_team_win']:
+        if c not in ['home_team_win'] and data[c].max() - data[c].min() != 0:
             test1[c] = (test1[c] - data[c].min()) / (data[c].max() - data[c].min())
             test2[c] = (test2[c] - data[c].min()) / (data[c].max() - data[c].min())
             data[c] = (data[c] - data[c].min()) / (data[c].max() - data[c].min())
     for c in test1.columns:
-        if c not in ['home_team_win']:
+        if c not in ['home_team_win'] and std_data[c].std() != 0:
             std_test1[c] = (std_test1[c] - std_data[c].mean()) / std_data[c].std()
             std_test2[c] = (std_test2[c] - std_data[c].mean()) / std_data[c].std()
             std_data[c] = (std_data[c] - std_data[c].mean()) / std_data[c].std()
