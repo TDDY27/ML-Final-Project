@@ -9,22 +9,22 @@ test = []
 
 t = sys.argv[1]
 
-with open('./datav6_t{}/raw_data.csv'.format(t), newline='') as csvfile:
+with open('./datav7_t{}/raw_data.csv'.format(t), newline='') as csvfile:
     rows = csv.reader(csvfile)
     for r in rows:
         all_data.append(r)
 
-with open('./datav6_t{}/raw_vdata.csv'.format(t), newline='') as csvfile:
+with open('./datav7_t{}/raw_vdata.csv'.format(t), newline='') as csvfile:
     rows = csv.reader(csvfile)
     for r in rows:
         v_data.append(r)
 
-with open('./datav6_t{}/raw_val.csv'.format(t), newline='') as csvfile:
+with open('./datav7_t{}/raw_val.csv'.format(t), newline='') as csvfile:
     rows = csv.reader(csvfile)
     for r in rows:
         val.append(r)
 
-with open('./datav6_t{}/raw_test1.csv'.format(t), newline='') as csvfile:
+with open('./datav7_t{}/raw_test1.csv'.format(t), newline='') as csvfile:
     rows = csv.reader(csvfile)
     for r in rows:
         test.append(r)
