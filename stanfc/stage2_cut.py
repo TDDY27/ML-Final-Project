@@ -61,3 +61,14 @@ y_test = test_data['home_team_win']
 X = data.drop(to_drop, axis=1)
 y = data['home_team_win']
 
+data_new = pd.read_csv('2024_test_data.csv')
+data_new = data_new.fillna({'is_night_game': 0.0})
+data_new['is_night_game'] = data_new['is_night_game'].astype(int)
+data_new['season'] = data_new['season'].fillna(0)
+
+numerical_columns = data_new.select_dtypes(include=['number']).columns  # Select only numeric columns
+data_new[numerical_columns] = data_new[numerical_columns].fillna(data_new[numerical_columns].mean())
+data_new[categorical_features] = data_new[categorical_features].fillna("NAN")
+data_new['season'] = data_new['season'].astype(int)
+
+X_new = data_new.drop(['id', 'season', 'home_team_season', 'away_team_season'], axis=1)
