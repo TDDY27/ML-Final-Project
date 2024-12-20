@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1734714686.46604 "d:/A desktop/交、台大資工/Desktop/ML/Final/ML-Final-Project/Final-Report/Report.tex" "Report.pdf" "Report" 1734714687.51613 0
+["pdflatex"] 1734714753.68107 "d:/A desktop/交、台大資工/Desktop/ML/Final/ML-Final-Project/Final-Report/Report.tex" "Report.pdf" "Report" 1734714754.91126 0
   "C:/Users/user/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1734713185 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/user/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1734713179 11988513 2c588d69167a6b591cc5f2f44dd32887 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -96,12 +96,12 @@
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1695383086 2269 4fe6fb3396214c91f164d45faf9bec45 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
-  "Report.aux" 1734714687 746 912ad629b35f67d1c7d95d1f6d22d0ef "pdflatex"
-  "Report.out" 1734714687 390 adebeb2a9b8370ecb7c8a95823ed54e9 "pdflatex"
+  "Report.aux" 1734714754 746 2edf352bd7a9daf7b4034eee2da32899 "pdflatex"
+  "Report.out" 1734714754 390 52f8359f8038f776c35c6dc786113a47 "pdflatex"
   "Report.tex" 1734714526 1099 feea2e5184237b0113634933769c69ef ""
   "d:/A desktop/交、台大資工/Desktop/ML/Final/ML-Final-Project/Final-Report/Report.tex" 1734714526 1099 feea2e5184237b0113634933769c69ef ""
-  "sections/10_blending_bagging.tex" 1734714684 31 a4f0e16f69ce1403ada483a3f829d0d1 ""
-  "sections/11_conclusion.tex" 1734714684 20 d06faf3f206a5087b04e67115f15abdc ""
+  "sections/10_blending_bagging.tex" 1734714752 31 8f6b266efc99d94fad92cb9f05eaf857 ""
+  "sections/11_conclusion.tex" 1734714746 20 b50204e17c0a475d3d65191e029fdf1d ""
   "sections/1_intro.tex" 1734714526 26 1e1edd178b9020bbf21da7fa7bb99fac ""
   "sections/2_data_preprocess.tex" 1734713972 25 13b0bd8b539488f5cba2ec11ae89f013 ""
   "sections/3_KNN.tex" 1734714566 32 097871109e660a78a2e05a12cfc68c08 ""
