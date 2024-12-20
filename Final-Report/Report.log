@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.21)  21 DEC 2024 00:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.21)  21 DEC 2024 01:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -487,7 +487,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
  (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (sections/1_intro.tex)
+) (sections/1_intro.tex) (sections/2_data_preprocess.tex) (sections/3_KNN.tex) (sections/4_PLA.tex) (sections/5_Linear_Regression.tex) (sections/6_Logistic_regression.tex) (sections/7_SVM.tex) (sections/8_Random_Forest.tex) (sections/9_CATboost.tex) (sections/10_blending_bagging.tex) (sections/11_conclusion.tex)
 
 [1
 
@@ -497,20 +497,20 @@ LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-11-02>
  ***********
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 1361C55005F9739CB22D4448973A9AEE;108.
+(rerunfilecheck)             Checksum: ADEBEB2A9B8370ECB7C8A95823ED54E9;390.
  ) 
 Here is how much of TeX's memory you used:
- 12313 strings out of 473650
- 199224 string characters out of 5718416
- 614956 words of memory out of 5000000
- 35234 multiletter control sequences out of 15000+600000
+ 12387 strings out of 473650
+ 201828 string characters out of 5718416
+ 617956 words of memory out of 5000000
+ 35267 multiletter control sequences out of 15000+600000
  563618 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,6n,93p,624b,453s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on Report.pdf (1 page, 43289 bytes).
+Output written on Report.pdf (1 page, 50388 bytes).
 PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
- 3 named destinations out of 1000 (max. 500000)
- 9 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 59 PDF objects out of 1000 (max. 8388607)
+ 14 named destinations out of 1000 (max. 500000)
+ 33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

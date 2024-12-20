@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1734713187.15886 "d:/A desktop/交、台大資工/Desktop/ML/Final/ML-Final-Project/Final-Report/Report.tex" "Report.pdf" "Report" 1734713188.25636 0
+["pdflatex"] 1734714686.46604 "d:/A desktop/交、台大資工/Desktop/ML/Final/ML-Final-Project/Final-Report/Report.tex" "Report.pdf" "Report" 1734714687.51613 0
   "C:/Users/user/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1734713185 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/user/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1734713179 11988513 2c588d69167a6b591cc5f2f44dd32887 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -96,11 +96,21 @@
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1695383086 2269 4fe6fb3396214c91f164d45faf9bec45 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
-  "Report.aux" 1734713188 425 03ec68af85a3b681ac4b88c87a773921 "pdflatex"
-  "Report.out" 1734713188 108 1361c55005f9739cb22d4448973a9aee "pdflatex"
-  "Report.tex" 1734713171 740 09c0c92b762692a3d8d1502f3ecd1cc8 ""
-  "d:/A desktop/交、台大資工/Desktop/ML/Final/ML-Final-Project/Final-Report/Report.tex" 1734713171 740 09c0c92b762692a3d8d1502f3ecd1cc8 ""
-  "sections/1_intro.tex" 1734712188 25 f1126a2f607fcab6a49af78cf3bd1ab3 ""
+  "Report.aux" 1734714687 746 912ad629b35f67d1c7d95d1f6d22d0ef "pdflatex"
+  "Report.out" 1734714687 390 adebeb2a9b8370ecb7c8a95823ed54e9 "pdflatex"
+  "Report.tex" 1734714526 1099 feea2e5184237b0113634933769c69ef ""
+  "d:/A desktop/交、台大資工/Desktop/ML/Final/ML-Final-Project/Final-Report/Report.tex" 1734714526 1099 feea2e5184237b0113634933769c69ef ""
+  "sections/10_blending_bagging.tex" 1734714684 31 a4f0e16f69ce1403ada483a3f829d0d1 ""
+  "sections/11_conclusion.tex" 1734714684 20 d06faf3f206a5087b04e67115f15abdc ""
+  "sections/1_intro.tex" 1734714526 26 1e1edd178b9020bbf21da7fa7bb99fac ""
+  "sections/2_data_preprocess.tex" 1734713972 25 13b0bd8b539488f5cba2ec11ae89f013 ""
+  "sections/3_KNN.tex" 1734714566 32 097871109e660a78a2e05a12cfc68c08 ""
+  "sections/4_PLA.tex" 1734714601 14 a95ba60000b24e74f320f152dde90873 ""
+  "sections/5_Linear_Regression.tex" 1734714601 28 1eb96a7c2344a794c8bc2cbd15983d8f ""
+  "sections/6_Logistic_regression.tex" 1734714617 30 25fec69d4946104e0b42bdd0203dbb22 ""
+  "sections/7_SVM.tex" 1734714626 14 329bcc8a2b60d69d6778e477b67cc780 ""
+  "sections/8_Random_Forest.tex" 1734714641 24 291016596dc92d3851a9cc905e73e07d ""
+  "sections/9_CATboost.tex" 1734714653 19 3744c8537e48f4455156c2aa803cd9c1 ""
   (generated)
   "Report.aux"
   "Report.log"
