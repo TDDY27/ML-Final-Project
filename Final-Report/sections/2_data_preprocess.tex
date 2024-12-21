@@ -1,12 +1,15 @@
 \section{Data Preprocess}
 
+\subsection*{Dealing with NAN}
+\ \par There are many NAN in all kinds of data. To deal with them, we can either fill in 0, fill in mean of other non-NAN rows, or fill in mean of the data of same team.
+
 \subsection*{Team Attribute and Pitcher Attribute}
-\par We try to add 60 boolean columns: is\_home\_team\_\{team name\} and is\_away\_team\_\{team name\} which indicate that if home team or away team equal to team name. Same method can be used on pitcher name. 
+\ \par We try to add 60 boolean columns: is\_home\_team\_\{team name\} and is\_away\_team\_\{team name\} which indicate that if home team or away team equal to team name. Same method can be used on pitcher name. 
 \par However we try it on random forest an observed that these attribute may have low importance. We guess that perhaps this kind of data is too scatter to make it important
 \par Alternatively, we can labelize string columns, this may work in algorithm based on decision tree.
 
 \subsection*{Drop std and skew}
-\par Since we think std and skew has little relationship with winning or lose. We try to drop all of those column.
+\ \par Since we think std and skew has little relationship with winning or lose. We try to drop all of those column.
 \par The result is that there are no difference in accuracy. However, training speed is faster using this data.
 
 

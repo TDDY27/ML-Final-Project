@@ -16,10 +16,39 @@
 \usepackage{mdframed}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{subfigure}
 \newtheorem*{remark}{Claim}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.8,0.3,0.3}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    morekeywords={trial.suggest_int},
+    keywordstyle=\color{codegreen},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                                 
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
 
 \title{ML Final Report}
-\author{Mr. O'clock insanely practices baseball to join MLB at 103.}
+\author{Mr. O'clock insanely practices}
 
 \begin{document}
 \maketitle
