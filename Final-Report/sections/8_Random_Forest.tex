@@ -1,1 +1,14 @@
-\subsection*{Random Forest}
+\subsection*{Random Forest(Best)}
+Random Forest is an ensemble learning method that builds multiple decision trees using bootstrap sampling and random feature selection, then combines their predictions to improve accuracy and reduce overfitting. It is robust, handles high-dimensional data well, and is effective for both classification and regression tasks.
+
+This model could be said as the one that performed the best during the kaggle competition, and the best one among all trained random forest models used the parameters as follows:
+
+\begin{minted}{python}
+model = RandomForestClassifier(n_estimators=12000, random_state=1,
+max_depth =7,min_samples_leaf=1,class_weight="balanced")
+\end{minted}
+where the random forest model is included in the package $sklearn.ensemble$.
+
+Here's an interesting story: we chose this set of parameters because, during class, the instructor shared his experience at the KDD Cup, where he used 12,000 estimators and a random state of 1 for Random Forest, inspiring us to try it. This configuration became our best model, achieving the highest accuracy. The choice of setting $max\_depth$ to 7 resulted from trial and error, as we found depth 6 led to underfitting, while depth 8 caused overfitting. 
+
+We split the provided training data into 80\% for training and 20\% for validation. The above model could reach a training accuracy of 76.5\% and validation accuracy 53.9\%. The public score we got on kaggle is 59.26\% for stage 1, and 58.39\% for stage 2. For private, we got an accuracy of 58.989\% for stage 1 and 52.45\% for stage 2. Similar to our findings in the logistic regression analysis, we observed a lower private score in stage 2, likely indicating overfitting to noise, which may be due to our failure to consider the significance of the time attribute and using the exact same data for training in the two stages. In short, Random Forest is a powerful model that excels with complex data (as in this case) by combining the outcomes of decision trees but is computationally intensive due to the time required to build and aggregate multiple trees. 
