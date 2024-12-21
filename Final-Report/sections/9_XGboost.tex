@@ -1,0 +1,54 @@
+\subsection*{XGboost}
+\quad XGboost is a machine learning algorithm package that based on GBDT, gradient boosting deciesion tree. 
+In this package we can self define multiple parameters. 
+\begin{itemize}
+    \item max depth : The maximum depth in each decision tree.
+    \item learning rate : Also known as eta which scales the contribution of each tree.
+    \item n\_estimators : The number of boosting trees.
+    \item subsample : Fraction of the training data used for growing each tree.
+    \item colsample\_bytree : Fraction of features sampled for each tree.
+    \item gamma : Minimum loss reduction required to make a split.
+    \item lambda : L2 regularization term on leaf weights.
+\end{itemize}
+\quad In order to select the best combination form above parameters, we use optuna to search in following ranges 
+\begin{lstlisting}[language=Python]
+    param = {
+        "verbosity": 0,
+        "objective": "multi:softmax",
+        "num_class": 2,
+        "eval_metric": "mlogloss",
+        "max_depth": trial.suggest_int("max_depth", 1, 10),
+        "learning_rate": trial.suggest_float("learning_rate", 0.01, 0.3),
+        "n_estimators": trial.suggest_int("n_estimators", 30, 200),
+        "subsample": trial.suggest_float("subsample", 0.3, 1.0),
+        "colsample_bytree": trial.suggest_float("colsample_bytree", 0.5, 1.0),
+        "gamma": trial.suggest_float("gamma", 0, 10),
+        "lambda": trial.suggest_float("lambda", 0, 10),
+    }
+\end{lstlisting}
+\quad The validation method implemented in this case is first sort the date of given training data and then take the first 80\% 
+of the data in each each season as training data set and the remaining ones as validation test data. (which is designed for stage 1 prediction).
+The best parameters is represented as follows : 
+\begin{lstlisting}[language=Python]
+    param = {
+        "verbosity": 0,
+        "objective": "multi:softmax",
+        "num_class": 2,
+        "eval_metric": "mlogloss",
+        "max_depth": 5,
+        "learning_rate": 0.06878298628903712,
+        "n_estimators": 53 ,
+        "subsample": 0.31490312644463636,
+        "colsample_bytree": 0.6050549554091992,
+        "gamma": 5.0214264964575595,
+        "lambda": 9.517586328422444
+    }
+\end{lstlisting}
+\quad Submit the prediction results by this parameters can get the accuracy in stage 1 as and in stage 2 as .
+
+
+\subsubsection{Package references}
+\begin{lstlisting}[language=Python]
+    import optuna
+    import xgboost as xgb
+\end{lstlisting}
