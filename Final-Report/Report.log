@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.21)  21 DEC 2024 17:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.21)  21 DEC 2024 17:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -565,18 +565,16 @@ File: lstlang1.sty 2024/09/23 1.10c listings language file
 <Pictures/MLdatacut_stage1.drawio.png, id=39, 387.4475pt x 261.97874pt>
 File: Pictures/MLdatacut_stage1.drawio.png Graphic file (type png)
 <use Pictures/MLdatacut_stage1.drawio.png>
-Package pdftex.def Info: Pictures/MLdatacut_stage1.drawio.png  used on input line 19.
+Package pdftex.def Info: Pictures/MLdatacut_stage1.drawio.png  used on input line 16.
 (pdftex.def)             Requested size: 110.8946pt x 74.98051pt.
 <Pictures/MLdatacut_stage2.drawio.png, id=41, 282.05376pt x 292.09125pt>
 File: Pictures/MLdatacut_stage2.drawio.png Graphic file (type png)
 <use Pictures/MLdatacut_stage2.drawio.png>
-Package pdftex.def Info: Pictures/MLdatacut_stage2.drawio.png  used on input line 20.
+Package pdftex.def Info: Pictures/MLdatacut_stage2.drawio.png  used on input line 17.
 (pdftex.def)             Requested size: 75.40752pt x 78.09016pt.
 ) (sections/10_blending_bagging.tex) (sections/11_conclusion.tex)
 
-[2 <./Pictures/MLdatacut_stage1.drawio.png> <./Pictures/MLdatacut_stage2.drawio.png>]
-
-[3] (Report.aux)
+[2 <./Pictures/MLdatacut_stage1.drawio.png> <./Pictures/MLdatacut_stage2.drawio.png>] (Report.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-11-02>
@@ -585,17 +583,17 @@ Package rerunfilecheck Info: File `Report.out' has not changed.
 (rerunfilecheck)             Checksum: 52F8359F8038F776C35C6DC786113A47;390.
  ) 
 Here is how much of TeX's memory you used:
- 14861 strings out of 473650
- 236366 string characters out of 5718416
- 1000804 words of memory out of 5000000
- 37668 multiletter control sequences out of 15000+600000
+ 14835 strings out of 473650
+ 235973 string characters out of 5718416
+ 919804 words of memory out of 5000000
+ 37665 multiletter control sequences out of 15000+600000
  564261 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,6n,93p,624b,1305s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on Report.pdf (3 pages, 102589 bytes).
+Output written on Report.pdf (2 pages, 97528 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 53 named destinations out of 1000 (max. 500000)
+ 95 PDF objects out of 1000 (max. 8388607)
+ 30 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

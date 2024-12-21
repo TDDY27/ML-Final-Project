@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1734773329.04295 "d:/A desktop/交、台大資工/Desktop/ML/Final/ML-Final-Project/Final-Report/Report.tex" "Report.pdf" "Report" 1734773330.6357 0
+["pdflatex"] 1734773705.18325 "d:/A desktop/交、台大資工/Desktop/ML/Final/ML-Final-Project/Final-Report/Report.tex" "Report.pdf" "Report" 1734773706.72278 0
   "C:/Users/user/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1734773230 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/user/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1734713179 11988513 2c588d69167a6b591cc5f2f44dd32887 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -111,8 +111,8 @@
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
   "Pictures/MLdatacut_stage1.drawio.png" 1734772721 16037 4eab9089dfc3551e7f7d9d6f5bef346f ""
   "Pictures/MLdatacut_stage2.drawio.png" 1734772814 11569 7523dc11dfa36569604c413dd6f1f970 ""
-  "Report.aux" 1734773330 746 d10a9d14a214afa0da7849aac411eb17 "pdflatex"
-  "Report.out" 1734773330 390 52f8359f8038f776c35c6dc786113a47 "pdflatex"
+  "Report.aux" 1734773706 746 bd317865553e7dd4b67e084883bc3062 "pdflatex"
+  "Report.out" 1734773706 390 52f8359f8038f776c35c6dc786113a47 "pdflatex"
   "Report.tex" 1734773222 2038 1329e5a2a5966060f4c6861138fb1ef7 ""
   "d:/A desktop/交、台大資工/Desktop/ML/Final/ML-Final-Project/Final-Report/Report.tex" 1734773222 2038 1329e5a2a5966060f4c6861138fb1ef7 ""
   "sections/10_blending_bagging.tex" 1734717396 34 317e8681d4097eb82081e8c3a81b6160 ""
@@ -125,7 +125,7 @@
   "sections/6_Logistic_regression.tex" 1734717396 33 732edbc7b6d5405064a618ac9e694a32 ""
   "sections/7_SVM.tex" 1734717396 17 17e3ad7a95cf891e1b5299e4f25935b9 ""
   "sections/8_Random_Forest.tex" 1734717400 27 aa29b150e21baa25f127667b86cb7ec0 ""
-  "sections/9_CATboost.tex" 1734773328 2981 def502b08950cdc31289745d82ed49dc ""
+  "sections/9_CATboost.tex" 1734773704 2354 2fc0f37ddbf8c3faf1903509a55c8f52 ""
   (generated)
   "Report.aux"
   "Report.log"

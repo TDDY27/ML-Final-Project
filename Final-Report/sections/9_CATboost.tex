@@ -3,10 +3,7 @@
 \par In all of the following experiment, i use mean of column to replace numerical column's NAN, and use 'NAN' to replace all NANs in string column. 
 \par In the initial tries, we use parameters as following
 \begin{lstlisting}[language=Python]
-iterations = 500
-depth = 5
-learning_rate = 0.05
-loss_function = 'Logloss'
+iterations = 500, depth = 5, learning_rate = 0.05, loss_function = 'Logloss'
 \end{lstlisting}
 \par This is our first algorithm that reaches 0.58 in public test. However, it is still not good enough to pass benchmark. 
 \par To find a better set of parameters, we use optuna to help us find it. And to mimic to stage1 / stage2 situation we will met, we use following different strategy to cut training and validation test for optuna.
@@ -29,27 +26,6 @@ params = {
     "bagging_temperature": trial.suggest_float("bagging_temperature", 0, 1),
     "random_strength": trial.suggest_float("random_strength", 0.1, 10),
     "loss_function": "Logloss",
-    "cat_features": categorical_features,
-    "verbose": 0,
 }
 \end{lstlisting}
-The best parameters we found is
-\begin{lstlisting}[language=Python]
-stage1_best_params = {
-    'iterations': 671, 
-    'depth': 6, 
-    'learning_rate': 0.011125753493784871, 
-    'l2_leaf_reg': 8.31605718532868, 
-    'bagging_temperature': 0.16596075573738783, 
-    'random_strength': 7.585473310850967
-}
-stage2_best_params = {
-    'iterations': 700,
-    'depth': 6, 
-    'learning_rate': 0.021691769231380345, 
-    'l2_leaf_reg': 1.1238482611810492, 
-    'bagging_temperature': 0.207863787648766, 
-    'random_strength': 5.938894924700072
-}
-\end{lstlisting}
-Which lead to a 0.57985 accuracy in stage1. And 0.54493 in stage2.
+The best parameters lead to a 0.57985 accuracy in stage1. And 0.54493 in stage2.
