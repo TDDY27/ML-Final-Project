@@ -1,1 +1,57 @@
 \subsection*{SVM}
+
+\subsubsection*{Choosing the best model in SVM}
+
+\quad In this section, we implement SVM model to predict the MLB result. 
+SVM a.k.a. support vector machine can select multiple parameters to decide the data transformation method 
+and hyperplane to seperate the data. To choose the best model, we use grid search by following parameters
+\begin{lstlisting}[language=Python]
+    param_grid = {
+    'C': [0.1, 1, 10, 100],
+    'gamma': ['scale', 'auto', 0.1, 1],
+    'kernel': ['rbf', 'linear', 'poly']
+    }
+\end{lstlisting}
+\quad After the bruteforce searching, the result turns out that 
+( kernel : linear, C=1.0, gamma : scale ) and ( kernel : rbf, C=1.0, gamma : scale ) have the best performance 
+which results in training data accuracy around 0.58 and validation data accuracy about 0.56 with 5-folds validations.
+After submit the test results to the kaggle in stage 1 and stage 2, 
+the first parameters combination turns out to be ( stage 1 : , stage 2 : ), and the second combinations results in (stage 1 : , stage 2 : ).
+
+\subsubsection*{SVM with bagging and blending}
+
+\quad Since both parameters combinations have the similar prediction accuracy, we come up with an idea to combine those parameters combinations by 
+bagging, blending with SVM. When it comes to bagging, we use bootstrapping to generate different model  
+with kernel=linear and kernel=rbf by selecting different values in the maximum number of features 
+(abbreviated as max\_feature which can increase the diverity of models), the maximum number of samples (maximum\_number of train samples 
+abbreviated as max\_samples) and the number of estimator (the number of different hypothesis generated from bagging).
+
+This time we utilize optuna package to help us find the best parameters by following commands 
+(Since optuna can tune the parameters in more precision ways, we also take C and gamma into considerations to expect better outcomes ).
+\begin{lstlisting}[language=Python]
+    C = trial.suggest_loguniform('C', 0.1, 100.0)
+    gamma = trial.suggest_categorical('gamma', ['scale', 'auto'])
+    n_estimators = trial.suggest_int('n_estimators', 10, 50)
+    max_samples = trial.suggest_float('max_samples', 0.5, 1.0)
+    max_features = trial.suggest_float('max_features', 0.3, 1.0)
+\end{lstlisting}
+\quad After optimization with Optuna, the selected best parameters are as follows:
+\begin{lstlisting}[language=Python]
+    C = 31.318108635885725
+    gamma = 'auto'
+    n_estimators = 25
+    max_samples = 0.9099476134699473
+    max_features = 0.806228041021773
+\end{lstlisting}
+\quad And the submission result on stage 1 and stage 2 is corresponding to and .
+
+\subsubsection*{Package references}
+\begin{lstlisting}[language=Python]
+from sklearn.linear_model import LogisticRegression  # Logistic Regression model
+from sklearn.model_selection import cross_val_score  # Cross-validation
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report  # Evaluation metrics
+rom sklearn.feature_selection import RFE
+from sklearn.ensemble import BaggingClassifier
+from sklearn.svm import SVC, LinearSVC
+import optuna
+\end{lstlisting}
