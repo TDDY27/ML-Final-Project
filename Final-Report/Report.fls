@@ -263,6 +263,7 @@ INPUT .\Pictures\MLdatacut_stage2.drawio.png
 INPUT .\Pictures\MLdatacut_stage2.drawio.png
 INPUT .\Pictures\MLdatacut_stage2.drawio.png
 INPUT .\Pictures\MLdatacut_stage2.drawio.png
+INPUT C:\Users\user\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT .\sections\10_blending_bagging.tex
 INPUT .\sections\10_blending_bagging.tex
 INPUT sections\10_blending_bagging.tex
@@ -272,6 +273,8 @@ INPUT sections\11_conclusion.tex
 INPUT Report.aux
 INPUT .\Report.out
 INPUT .\Report.out
+INPUT C:\Users\user\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
+INPUT C:\Users\user\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\user\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\user\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\user\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb

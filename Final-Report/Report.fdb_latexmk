@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1734773705.18325 "d:/A desktop/交、台大資工/Desktop/ML/Final/ML-Final-Project/Final-Report/Report.tex" "Report.pdf" "Report" 1734773706.72278 0
+["pdflatex"] 1734802026.95697 "d:/A desktop/交、台大資工/Desktop/ML/Final/ML-Final-Project/Final-Report/Report.tex" "Report.pdf" "Report" 1734802028.92337 0
   "C:/Users/user/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1734773230 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/user/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1734713179 11988513 2c588d69167a6b591cc5f2f44dd32887 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -8,6 +8,7 @@
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1233951854 928 2dc8d444221b7a635bb58038579b861a ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1233951854 908 2921f8a10601f252058503cc6570e581 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1233951854 940 228d6584342e91276bf566bcf9716b83 ""
+  "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmex10.tfm" 1136765053 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmmi12.tfm" 1136765053 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -22,6 +23,7 @@
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy8.tfm" 1136765053 1120 8b7d695260f3cff42e636090a8002094 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmtt10.tfm" 1136765053 768 1321e9409b4137d6fb428ac9dc956269 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmtt8.tfm" 1136765053 768 d7b9a2629a0c353102ad947dc9221d49 ""
+  "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
@@ -111,8 +113,8 @@
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
   "Pictures/MLdatacut_stage1.drawio.png" 1734772721 16037 4eab9089dfc3551e7f7d9d6f5bef346f ""
   "Pictures/MLdatacut_stage2.drawio.png" 1734772814 11569 7523dc11dfa36569604c413dd6f1f970 ""
-  "Report.aux" 1734773706 746 bd317865553e7dd4b67e084883bc3062 "pdflatex"
-  "Report.out" 1734773706 390 52f8359f8038f776c35c6dc786113a47 "pdflatex"
+  "Report.aux" 1734802028 746 bd317865553e7dd4b67e084883bc3062 "pdflatex"
+  "Report.out" 1734802028 390 52f8359f8038f776c35c6dc786113a47 "pdflatex"
   "Report.tex" 1734773222 2038 1329e5a2a5966060f4c6861138fb1ef7 ""
   "d:/A desktop/交、台大資工/Desktop/ML/Final/ML-Final-Project/Final-Report/Report.tex" 1734773222 2038 1329e5a2a5966060f4c6861138fb1ef7 ""
   "sections/10_blending_bagging.tex" 1734717396 34 317e8681d4097eb82081e8c3a81b6160 ""
@@ -125,7 +127,7 @@
   "sections/6_Logistic_regression.tex" 1734717396 33 732edbc7b6d5405064a618ac9e694a32 ""
   "sections/7_SVM.tex" 1734717396 17 17e3ad7a95cf891e1b5299e4f25935b9 ""
   "sections/8_Random_Forest.tex" 1734717400 27 aa29b150e21baa25f127667b86cb7ec0 ""
-  "sections/9_CATboost.tex" 1734773704 2354 2fc0f37ddbf8c3faf1903509a55c8f52 ""
+  "sections/9_CATboost.tex" 1734802025 2493 c1c5c1c381e7e132d209dce190b8bb8e ""
   (generated)
   "Report.aux"
   "Report.log"
