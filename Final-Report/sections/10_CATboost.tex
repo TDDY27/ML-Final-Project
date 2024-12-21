@@ -28,7 +28,7 @@ params = {
     "loss_function": "Logloss",
 }
 \end{lstlisting}
-The best parameters lead to a 0.57985 accuracy in stage1. And 0.54493 in stage2. Which is not quite stable between two stages. 
+The best parameters lead to a 0.57985 accuracy in stage1. And 0.54493 in stage2. Which is not quite stable between two stages. Catboost is a very efficient model, which finish a single round of prediction in a minute. However, doing optuna will take times.  
 \subsubsection*{Package Reference}
 \begin{lstlisting}
 optuna, catboost

@@ -3,10 +3,10 @@ Random Forest is an ensemble learning method that builds multiple decision trees
 
 This model could be said as the one that performed the best during the kaggle competition, and the best one among all trained random forest models used the parameters as follows:
 
-\begin{minted}{python}
+\begin{lstlisting}[language=Python]
 model = RandomForestClassifier(n_estimators=12000, random_state=1,
 max_depth =7,min_samples_leaf=1,class_weight="balanced")
-\end{minted}
+\end{lstlisting}
 where the random forest model is included in the package $sklearn.ensemble$.
 
 Here's an interesting story: we chose this set of parameters because, during class, the instructor shared his experience at the KDD Cup, where he used 12,000 estimators and a random state of 1 for Random Forest, inspiring us to try it. This configuration became our best model, achieving the highest accuracy. The choice of setting $max\_depth$ to 7 resulted from trial and error, as we found depth 6 led to underfitting, while depth 8 caused overfitting. 
