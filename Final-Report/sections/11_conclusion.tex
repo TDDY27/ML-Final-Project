@@ -1,18 +1,31 @@
 \section{Conclusion}
-Following are a summarize of our work 
+Following are a summarize of our work.
 \begin{table}[h]
     \centering
     \begin{tabular}{|c|c|c|c|c|}
     \hline
     Model & Preprocess & Other Technique & Stage1 & Stage2 \\ \hline\hline
     KNN   & TODO   & None & TODO & TODO  \\ \hline
-    Linear Regression & Team Attribute \& Diff \& Ratio & None & 0.58147 & 0.5482 \\ \hline
+    Linear Regression & TA \& Diff \& Ratio & None & 0.58147 & 0.5482 \\ \hline
     Logistic Regression & TODO & None & 0.571 & 0.5385 \\ \hline
-    SVM & Team Attribute & Blending \& Bagging \& Optuna & 0.57887 & 0.53349 \\ \hline
+    SVM & TA & Bl \& Ba \& Op & 0.57887 & 0.53349 \\ \hline
+    SVM (Linear) & TA & GS & 0.57142 & 0.50980 \\ \hline
+    SVM (RBF) & TA & GS & 0.57110 & 0.54656 \\ \hline
     Random Forest & TODO & None & 0.58989 & 0.5245 \\ \hline
-    XGboost & Team Attribute & Optuna & 0.57725 & 0.54166 \\ \hline
-    CATboost & Drop std and skew & Optuna & 0.57985 & 0.54493 \\ \hline
+    XGboost & TA & Op & 0.57725 & 0.54166 \\ \hline
+    CATboost & DSS & Op & 0.57985 & 0.54493 \\ \hline
     \end{tabular}
     \label{tab:example_table}
 \end{table}
+\subsubsection*{Abbreviation}
+\begin{itemize}
+    \item[TA] Team Attribute
+    \item[DSS] Drop std and skew 
+    \item[GS] Grid Search
+    \item[Bl] Blending
+    \item[Ba] Bagging
+    \item[Op] Optuna  
+\end{itemize}
 
+\par We suggest that you should use our Random Forest model for same season prediction and our Linear Regression model for stage2. 
+\par Noted that we have done Diff \& Ratio Technique on our data in the Linear Regression model. This give a inspire that using our Diff \& Ratio pre process, we can make data more linear separable (given that Linear SVM that only do Team Attribute preprocess doesn't give a as well result).
