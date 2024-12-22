@@ -16,10 +16,12 @@ argc = len(sys.argv)
 for t in range(int(sys.argv[1]),int(sys.argv[2])):
 
     data = pd.read_csv('data.csv')
+    test2 = pd.read_csv('test2.csv')
 
     data = data.sample(frac=1,random_state=t).reset_index(drop=True)
 
     data_N = data.shape[0]
+    test2_N = test2.shape[0]
 
     win = data['home_team_win']
 
@@ -33,6 +35,11 @@ for t in range(int(sys.argv[1]),int(sys.argv[2])):
             season_set.add(int(data.at[i, "season"]))
         if not pd.isna(data.at[i, "home_team_season"]):
             team_season_set.add(data.at[i, "home_team_season"])
+    for i in range(test2_N):
+        if not pd.isna(test2.at[i, "season"]):
+            season_set.add(int(test2.at[i, "season"]))
+        if not pd.isna(test2.at[i, "home_team_season"]):
+            team_season_set.add(test2.at[i, "home_team_season"])
     
     name_list = list(name_set)
     name_list.sort()
