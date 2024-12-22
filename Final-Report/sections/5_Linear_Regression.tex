@@ -1,1 +1,37 @@
 \subsection*{Linear Regression}
+
+Here are the results of applying linear regression on different type of data.
+
+\noindent
+(RD\&TS are the data adding "Team", "Season",and "TeamSeason" boolean extension columns using Ratio\&Diff.) \\
+
+\vspace{6pt}
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    TS         & raw    & raw\_f & std    & std\_f & norm   & norm\_f \\\hline
+    Accuracy   & 0.5679 & 0.6254 & 0.5681 & 0.6211 & 0.5698 & 0.6254 \\\hline
+    Validation & 0.5203 & 0.5230 & 0.5230 & 0.5221 & 0.5194 & 0.5230 \\\hline
+\end{tabular}
+
+\vspace{12pt}
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    Ratio\&Diff& raw    & raw\_f & std    & std\_f & norm   & norm\_f \\\hline
+    Accuracy   & 0.5601 & 0.5745 & 0.5615 & 0.5745 & 0.5583 & 0.5745 \\\hline
+    Validation & 0.5058 & 0.5401 & 0.5094 & 0.5401 & 0.5112 & 0.5401 \\\hline
+\end{tabular}
+
+\vspace{12pt}
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    RD\&TS     & raw    & raw\_f & std    & std\_f & norm   & norm\_f \\\hline
+    Accuracy   & 0.5611 & 0.6191 & 0.5604 & 0.6187 & 0.5607 & 0.6191  \\\hline
+    Validation & 0.5094 & 0.5248 & 0.5094 & 0.5284 & 0.5094 & 0.5248 \\\hline
+\end{tabular}
+
+\vspace{6pt}
+
+We have tried all the best accuracy and the best validation on the public/private test, but the Ratio\&Diff perform the best, which has the least accuracy in the training set. However, it has the best validation result. We can infer that the other data cause overfitting.
