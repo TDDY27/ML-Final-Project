@@ -1,6 +1,6 @@
 \section{Models}
 \subsection*{KNN}
 
-An important thing in KNN is normalization because if some columns are scaled, it will have a significant affect on the result. The performance of the normalization data is slightly better than raw data.
+\quad An important thing in KNN is normalization because if some columns are scaled, it will have a significant affect on the result. The performance of the normalization data is slightly better than raw data.
 
 We apply a validation on the KNN algorithm to find a suitable K and P, where P results in a different definition of distance. In the hypothesis set K = [1\%, 1.5\%, 2\%] cross P = [1, 1.5, 1.8, 2]. We observe that the best K is 193, about 2\% of the total data, and P is sometimes 1 and sometimes 2. The problem we face is that KNN is too time-consuming, so we cannot test more K and P. And for different K and P, their performance didn't differ a lot. KNN is not a good algorithm in this situation.

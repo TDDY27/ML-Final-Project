@@ -1,6 +1,6 @@
 \subsection*{Logistic Regression}
 
-Logistic regression is a machine learning technique that predicts the probability of an outcome based on the weighted contribution of predictors. The sigmoid function ensures the probabilities are valid, and the coefficients are adjusted during training to maximize how well the model explains the observed data. 
+\quad Logistic regression is a machine learning technique that predicts the probability of an outcome based on the weighted contribution of predictors. The sigmoid function ensures the probabilities are valid, and the coefficients are adjusted during training to maximize how well the model explains the observed data. 
 
 This is one of the very first models we have tried on, and the best one among all trained logitic regression models used the parameters as follows: 
 
@@ -8,6 +8,9 @@ This is one of the very first models we have tried on, and the best one among al
 model = LogisticRegression(solver='liblinear', max_iter=1000, random_state=42)
 \end{lstlisting}
 
-where the logistic regression model is included in the package $sklearn.linear\_model$.
-
 We split the provided training data into 80\% for training and 20\% for validation. The above model could reach a training accuracy of 63.42\% and validation accuracy 54.52\%. The public score we got on kaggle is 56.9\% for stage 1, and 57.64\% for stage 2. For private, we got an accuracy of 57.1\% for stage 1 and 53.85\% for stage 2. In stage 2, a larger gap emerges between the public and private scores, which we attribute to using the same training technique for both stages. We did not account for the influence of time, an especially critical factor in stage 2, which should have been incorporated into our model. Overall, it's an efficient model but assumes a linear relationship which might not always be the case especially in complex problems like this.
+
+\subsubsection*{Package references}
+\begin{lstlisting}[language=Python]
+sklearn.linear\_model
+\end{lstlisting}
