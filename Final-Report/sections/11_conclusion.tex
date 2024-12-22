@@ -1,4 +1,5 @@
 \section{Conclusion}
+\subsubsection*{Performance summerization}
 Following are a summarize of our work.
 \begin{table}[h]
     \centering
@@ -16,16 +17,20 @@ Following are a summarize of our work.
     CATboost & DSS & Op & 0.57985 & 0.54493 \\ \hline
     \end{tabular}
     \label{tab:example_table}
-\end{table}
-\subsubsection*{Abbreviation}
-\begin{itemize}
-    \item[TA] Team Attribute
-    \item[DSS] Drop std and skew 
-    \item[GS] Grid Search
-    \item[Bl] Blending
-    \item[Ba] Bagging
-    \item[Op] Optuna  
-\end{itemize}
+\end{table}\\
+% \subsubsection*{Abbreviation}
+Corresponding Abbreviation : \\
+(TA : Team Attribute), (DSS : Drop std and skew ), (GS : Grid Search), (Bl : Blending),\\
+ (Ba : Bagging), (Op : Optuna).
+% \begin{itemize}
+%     \item[TA] Team Attribute
+%     \item[DSS] Drop std and skew 
+%     \item[GS] Grid Search
+%     \item[Bl] Blending
+%     \item[Ba] Bagging
+%     \item[Op] Optuna  
+% \end{itemize}
 
+\subsubsection*{Model Selection and Result Analysis}
 \par We suggest that you should use our Random Forest model for same season prediction and our Linear Regression model for stage2. 
 \par Noted that we have done Diff \& Ratio Technique on our data in the Linear Regression model. This give a inspire that using our Diff \& Ratio pre process, we can make data more linear separable (given that Linear SVM that only do Team Attribute preprocess doesn't give a as well result).
