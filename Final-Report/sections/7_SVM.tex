@@ -60,8 +60,26 @@ This time we utilize optuna package to help us find the best parameters by follo
     max_samples = trial.suggest_float('max_samples', 0.5, 1.0)
     max_features = trial.suggest_float('max_features', 0.3, 1.0)
 \end{lstlisting}
-\quad After optimization with Optuna, 
-And the submission result on stage 1 and stage 2 is corresponding to and .
+\quad After optimization with Optuna, the submission result 
+on stage 1 is public 0.57198, private 0.57887 and 
+on stage 2 is public 0.54900, private 0.53349 . 
+Compared to the results before applying bagging, 
+the linear regression model achieved its best performance at 0.57142, 
+while the RBF kernel achieved its best performance at 0.57110, both considering stage 1, stage 2, private, and public datasets.
+The application of bagging and blending outperformed the individual linear regression and RBF kernel models,
+demonstrating the advantages of combining multiple hypotheses. 
+However, the prediction performance in stage 2 remains suboptimal.
+
+We suggest that this issue may stem from mispredictions caused by the linear kernel SVM,
+ which exhibited significantly poor performance in stage 2. 
+ Overall, the motivation to combine the two models due to their similar performance in stage 1 is 
+ validated by the improved results obtained through bagging and blending, as expected.
+
+That said, the process of bagging and blending is computationally intensive, 
+as it requires generating multiple hypotheses using the linear kernel SVM and RBF kernel SVM models. 
+Additionally, parameter selection demands a considerable amount of time. Nonetheless, 
+while the computational cost increases significantly for large datasets, 
+the added diversity from bagging and blending can lead to more precise predictions.
 
 \subsubsection*{Package references}
 \begin{lstlisting}[language=Python]
