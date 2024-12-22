@@ -1,10 +1,10 @@
 \section*{Further Data Preprocess}
 
-\subsection{Diff}
+\subsection*{Diff}
 
 For those attributes which both home team and the away team have, for example, "home-team-spread-mean". We calculate the difference of the two values, and use only one value to replace two. These features are considered to have a strong connection to the final score, which can directly affect the result.
 
-\subsection{Ratio}
+\subsection*{Ratio}
 However, here are some attributes that are calculated index instead of statistics. We believe that the difference between 0.8 and 0.9 differs from that between 0.1 and 0.2. "home-batting-onbase-perc-10RA" is an example. According to Lanchester's laws in military science, we change the formula to:
 
 Ratio$(a,b) = sign(c)\cdot\sqrt{|c|}$, where $c = a * |a| - b * |b|$.
