@@ -1,28 +1,4 @@
-\section{Appendix}
-\par Following are our selected parameters after running Optuna parameter search.
-\subsection*{SVM (Blending \& Bagging)}
-\begin{lstlisting}
-C = 31.318108635885725, gamma = 'auto', n_estimator = 25, 
-max_samples = 0.9099476134699473, max_features = 0.806228041021773
-\end{lstlisting}
-
-\subsection*{XGboost}
-\begin{lstlisting}
-max_depth = 5, learning_rate = 0.06878298628903712, n_estimators = 53, 
-subsample = 0.31490312644463636 colsample_bytree = 0.6050549554091992, 
-gamma = 5.0214264964575595, lambda = 9.517586328422444
-\end{lstlisting}
-
-\subsection*{CATboost}
-\subsubsection*{Stage1}
-\begin{lstlisting}
-iterations = 671, depth = 6, learning_rate = 0.011125753493784871, 
-l2_leaf_reg = 8.31605718532868,  bagging_temperature = 0.16596075573738783, 
-random_strength = 7.585473310850967
-\end{lstlisting}
-\subsubsection*{Stage2}
-\begin{lstlisting}
-iterations = 700, depth = 6, learning_rate = 0.021691769231380345, 
-l2_leaf_reg = 1.1238482611810492,  bagging_temperature = 0.207863787648766,
-random_strength = 5.938894924700072
-\end{lstlisting}
+\section{Workload Balance}
+\begin{figure}[h]
+    \includegraphics[width=1\linewidth]{Pictures/Workkload.png}
+\end{figure}

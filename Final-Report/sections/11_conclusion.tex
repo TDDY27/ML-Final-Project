@@ -6,14 +6,14 @@ Following are a summarize of our work.
     \begin{tabular}{|c|c|c|c|c|}
     \hline
     Model & Preprocess & Other Technique & Stage1 & Stage2 \\ \hline\hline
-    KNN   & Diff \& Ratio   & None & 0.56786 & 0.54166  \\ \hline
-    Linear Regression & TA \& Diff \& Ratio & None & 0.58147 & 0.5482 \\ \hline
+    KNN   & DSS \& Diff \& Ratio   & None & 0.56786 & 0.54166  \\ \hline
+    Linear Regression & DSS \& TA \& Diff \& Ratio & None & 0.58147 & 0.5482 \\ \hline
     Logistic Regression & None & None & 0.571 & 0.5385 \\ \hline
-    SVM & TA & Bl \& Ba \& Op & 0.57887 & 0.53349 \\ \hline
-    SVM (Linear) & TA & GS & 0.57142 & 0.50980 \\ \hline
-    SVM (RBF) & TA & GS & 0.57110 & 0.54656 \\ \hline
+    SVM & DSS \& TA &  Bl \& Ba \& Op & 0.57887 & 0.53349 \\ \hline
+    SVM (Linear) & DSS \& TA & GS & 0.57142 & 0.50980 \\ \hline
+    SVM (RBF) & DSS \& TA & GS & 0.57110 & 0.54656 \\ \hline
     Random Forest & None & None & 0.58989 & 0.5245 \\ \hline
-    XGboost & TA & Op & 0.57725 & 0.54166 \\ \hline
+    XGboost & DSS \& TA & Op & 0.57725 & 0.54166 \\ \hline
     CATboost & DSS & Op & 0.57985 & 0.54493 \\ \hline
     \end{tabular}
     \label{tab:example_table}
