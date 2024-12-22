@@ -16,12 +16,37 @@ and hyperplane to seperate the data. To choose the best model, we use grid searc
 ( kernel : linear, C=1.0, gamma : scale ) and ( kernel : rbf, C=1.0, gamma : scale ) have the best performance 
 which results in training data accuracy around 0.58 and validation data accuracy about 0.56 with 5-folds validations.
 After submit the test results to the kaggle in stage 1 and stage 2, 
-the first parameters combination turns out to be ( stage 1 : , stage 2 : ), and the second combinations results in (stage 1 : , stage 2 : ).
+the first parameters combination turns out to be in 
+stage 1 : pulic 0.56584, private 0.57142, and in stage 2 : public 0.50830, private 0.50980, 
+and the second combinations results in stage 1 : public 0.57101, private 0.57110, stage 2 : public 0.57558, private 0.54656.
+
+\subsubsection*{Linear Kernel SVM}
+\quad The performance of the linear kernel SVM is relatively stable when comparing public and private test results. 
+However, when the trained model is applied to stage 2 data, the accuracy drops significantly from approximately 0.57 to around 0.51. 
+This suggests that the validation method used for the linear kernel may need improvement to better handle stage 2 predictions. 
+We propose that since the RBF kernel achieves a stable 0.57 accuracy in stage 2 and the linear kernel is inherently a simpler model, 
+overfitting is unlikely to be the primary issue. 
+Instead, the linear model may be too simplistic to accurately predict stage 2 data, 
+which spans the entire year, particularly with an unsuitable validation approach. Despite the instability in performance, 
+the linear kernel's training speed is highly efficient, especially when the regularization parameter 
+C is set below 100.
+
+\subsubsection*{RBF Kernel SVM}
+\quad The RBF kernel SVM demonstrates strong and stable accuracy, 
+with only a slight drop in private test results during stage 2. 
+With proper regularization, it effectively models and separates the data while minimizing overfitting, 
+making it a reliable choice for this task. However, compared to the linear kernel, 
+the RBF kernel requires more training time and is more prone to overfitting in certain scenarios. 
+Additionally, the RBF kernel projects the data into an infinite-dimensional space, 
+which reduces the model's interpretability. As a result, while it often achieves excellent prediction performance, 
+it provides limited insight into the underlying patterns learned during training.
+
+
 
 \subsubsection*{SVM with bagging and blending}
 
-\quad Since both parameters combinations have the similar prediction accuracy, we come up with an idea to combine those parameters combinations by 
-bagging, blending with SVM. When it comes to bagging, we use bootstrapping to generate different model  
+\quad Since both parameters combinations have the similar prediction accuracy in stage 1 public tests, we come up with an idea to combine those parameters combinations by 
+bagging and blending with SVM. When it comes to bagging, we use bootstrapping to generate different model  
 with kernel=linear and kernel=rbf by selecting different values in the maximum number of features 
 (abbreviated as max\_feature which can increase the diverity of models), the maximum number of samples (maximum\_number of train samples 
 abbreviated as max\_samples) and the number of estimator (the number of different hypothesis generated from bagging).
@@ -35,23 +60,10 @@ This time we utilize optuna package to help us find the best parameters by follo
     max_samples = trial.suggest_float('max_samples', 0.5, 1.0)
     max_features = trial.suggest_float('max_features', 0.3, 1.0)
 \end{lstlisting}
-\quad After optimization with Optuna, the selected best parameters are as follows:
-\begin{lstlisting}[language=Python]
-    C = 31.318108635885725
-    gamma = 'auto'
-    n_estimators = 25
-    max_samples = 0.9099476134699473
-    max_features = 0.806228041021773
-\end{lstlisting}
-\quad And the submission result on stage 1 and stage 2 is corresponding to and .
+\quad After optimization with Optuna, 
+And the submission result on stage 1 and stage 2 is corresponding to and .
 
 \subsubsection*{Package references}
 \begin{lstlisting}[language=Python]
-from sklearn.linear_model import LogisticRegression  # Logistic Regression model
-from sklearn.model_selection import cross_val_score  # Cross-validation
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report  # Evaluation metrics
-rom sklearn.feature_selection import RFE
-from sklearn.ensemble import BaggingClassifier
-from sklearn.svm import SVC, LinearSVC
-import optuna
+sklearn, optuna
 \end{lstlisting}

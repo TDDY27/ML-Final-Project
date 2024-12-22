@@ -1,16 +1,6 @@
 \subsection*{XGboost}
 \quad XGboost is a machine learning algorithm package that based on GBDT, gradient boosting deciesion tree. 
-In this package we can self define multiple parameters. 
-\begin{itemize}
-    \item max depth : The maximum depth in each decision tree.
-    \item learning rate : Also known as eta which scales the contribution of each tree.
-    \item n\_estimators : The number of boosting trees.
-    \item subsample : Fraction of the training data used for growing each tree.
-    \item colsample\_bytree : Fraction of features sampled for each tree.
-    \item gamma : Minimum loss reduction required to make a split.
-    \item lambda : L2 regularization term on leaf weights.
-\end{itemize}
-\quad In order to select the best combination form above parameters, we use optuna to search in following ranges 
+We utilize optuna to help us select the best parameters by following ranges :
 \begin{lstlisting}[language=Python]
     param = {
         "verbosity": 0,
@@ -27,28 +17,22 @@ In this package we can self define multiple parameters.
     }
 \end{lstlisting}
 \quad The validation method implemented in this case is first sort the date of given training data and then take the first 80\% 
-of the data in each each season as training data set and the remaining ones as validation test data. (which is designed for stage 1 prediction).
-The best parameters is represented as follows : 
-\begin{lstlisting}[language=Python]
-    param = {
-        "verbosity": 0,
-        "objective": "multi:softmax",
-        "num_class": 2,
-        "eval_metric": "mlogloss",
-        "max_depth": 5,
-        "learning_rate": 0.06878298628903712,
-        "n_estimators": 53 ,
-        "subsample": 0.31490312644463636,
-        "colsample_bytree": 0.6050549554091992,
-        "gamma": 5.0214264964575595,
-        "lambda": 9.517586328422444
-    }
-\end{lstlisting}
-\quad Submit the prediction results by this parameters can get the accuracy in stage 1 as and in stage 2 as .
+of the data in each each season as training data set and the remaining ones as validation test data (which is designed for stage 1 prediction).
 
+Submit the prediction results obtained by training XGBoost with the best parameters selected by Optuna. 
+The accuracy achieved in stage 1 is as follows: private score: 0.57725 and public score: 0.58683. In stage 2,
+ the accuracy is private score: 0.54166 and public score: 0.58554. 
 
-\subsubsection{Package references}
+ The accuracy of XGBoost among all the algorithms we used ranks second, which was an unexpected outcome. Compared to the CatBoost algorithm, we initially expected CatBoost to deliver more accurate results since it natively handles string data and is also based on GBDT (Gradient Boosting Decision Trees). However, with data preprocessing that converts string information into a sparse table, XGBoost was able to incorporate this information effectively and produce precise predictions.
+
+The performance of XGBoost between the two stages was stable in the public test, achieving an accuracy of 0.58 in both stages. Nonetheless, there was some fluctuation in the private test, where accuracy dropped from 0.57725 in stage 1 to 0.54166 in stage 2. We suggest that adopting a different validation method could improve stage 2 results and lead to more stable performance.
+
+Compared to SVM bagging and blending methods, XGBoost is undoubtedly an efficient algorithm. 
+While its performance is similar to CatBoost, which also uses GBDT, it is slightly slower than simpler models like PLA, Linear Regression, and Logistic Regression. 
+However, selecting optimal hyperparameters for XGBoost can take several hours with tools like Optuna. Despite this, XGBoost's support for multithreading and GPU optimization ensures excellent scalability, 
+enabling efficient training even on large datasets.
+ 
+\subsubsection*{Package references}
 \begin{lstlisting}[language=Python]
-    import optuna
-    import xgboost as xgb
+optuna, xgboost
 \end{lstlisting}
