@@ -32,10 +32,14 @@ the linear kernel's training speed is highly efficient, especially when the regu
 C is set below 100.
 
 \subsubsection*{RBF Kernel SVM}
-\quad The RBF kernel SVM delivers good and stable accuracy, 
-except for a slight drop in the private test results during stage 2. 
-With appropriate regularization, the RBF kernel effectively fits and separates the data while avoiding overfitting issues, 
-making it a robust choice for this task.
+\quad The RBF kernel SVM demonstrates strong and stable accuracy, 
+with only a slight drop in private test results during stage 2. 
+With proper regularization, it effectively models and separates the data while minimizing overfitting, 
+making it a reliable choice for this task. However, compared to the linear kernel, 
+the RBF kernel requires more training time and is more prone to overfitting in certain scenarios. 
+Additionally, the RBF kernel projects the data into an infinite-dimensional space, 
+which reduces the model's interpretability. As a result, while it often achieves excellent prediction performance, 
+it provides limited insight into the underlying patterns learned during training.
 
 
 
