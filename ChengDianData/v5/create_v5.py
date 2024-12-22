@@ -10,4 +10,5 @@ for t in range(a,b):
 
 subprocess.call(["python3", "process_data_v5.py", "{}".format(a), "{}".format(b)])
 subprocess.call(["python3", "reduce_data_v5.py", "{}".format(a), "{}".format(b)])
+subprocess.call(["python3", "reduce_vdata_v5.py", "{}".format(a), "{}".format(b)])
 subprocess.call(["python3", "process_val_v5.py", "{}".format(a), "{}".format(b)])
