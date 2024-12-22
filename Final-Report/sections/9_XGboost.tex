@@ -23,7 +23,7 @@ Submit the prediction results obtained by training XGBoost with the best paramet
 The accuracy achieved in stage 1 is as follows: private score: 0.57725 and public score: 0.58683. In stage 2,
  the accuracy is private score: 0.54166 and public score: 0.58554. 
 
- The accuracy of XGBoost among all the algorithms we used ranks second, which was an unexpected outcome. Compared to the CatBoost algorithm, we initially expected CatBoost to deliver more accurate results since it natively handles string data and is also based on GBDT (Gradient Boosting Decision Trees). However, with data preprocessing that converts string information into a sparse table, XGBoost was able to incorporate this information effectively and produce precise predictions.
+ The accuracy of XGBoost in public testcase among all the algorithms we used ranks second in stage1 and rank first in stage 2, which was an unexpected outcome. Compared to the CatBoost algorithm, we initially expected CatBoost to deliver more accurate results since it natively handles string data and is also based on GBDT (Gradient Boosting Decision Trees). However, with data preprocessing that converts string information into a sparse table, XGBoost was able to incorporate this information effectively and produce precise predictions.
 
 The performance of XGBoost between the two stages was stable in the public test, achieving an accuracy of 0.58 in both stages. Nonetheless, there was some fluctuation in the private test, where accuracy dropped from 0.57725 in stage 1 to 0.54166 in stage 2. We suggest that adopting a different validation method could improve stage 2 results and lead to more stable performance.
 
