@@ -1,6 +1,27 @@
 \section{Models}
 \subsection*{KNN}
 
-\quad An important thing in KNN is normalization because if some columns are scaled, it will have a significant affect on the result. The performance of the normalization data is slightly better than raw data.
+\quad We apply a validation on the KNN algorithm to find a suitable K and P, where P results in a different definition of distance in the hypothesis set K = [0.5\%, 1\%, 2\%] cross P = [1, 1.5, 1.8, 2]. We also consider different data type, including raw data, standardization, and normalization. The problem we face is that KNN is too time-consuming, so we cannot test more K and P. And for different K and P, their performance didn't differ a lot.
 
-We apply a validation on the KNN algorithm to find a suitable K and P, where P results in a different definition of distance. In the hypothesis set K = [1\%, 1.5\%, 2\%] cross P = [1, 1.5, 1.8, 2]. We observe that the best K is 193, about 2\% of the total data, and P is sometimes 1 and sometimes 2. The problem we face is that KNN is too time-consuming, so we cannot test more K and P. And for different K and P, their performance didn't differ a lot. KNN is not a good algorithm in this situation.
+\noindent
+(TS are the data adding "Team", "Season",and "TeamSeason" boolean extension column.) \\
+(Ratio\&Diff are the data adding Team boolean extension column.) \\
+(Note that \_f represents the data with those boolean extension columns.)
+
+\vspace{6pt}
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    TS & raw & raw\_f & std & std\_f & norm & norm\_f \\\hline
+    best(K,P) & (2\%,1.5) & (2\%,1) & (1\%,1.5) & (2\%,2) & (1\%,1) & (2\%,1.5)\\\hline
+    Validation & 0.5593 & 0.5594 & 0.5598 & 0.5595 & 0.5540 & 0.5626\\\hline
+\end{tabular}
+
+\vspace{12pt}
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    Ratio\&Diff & raw & raw\_f & std & std\_f & norm & norm\_f \\\hline
+    best(K,P) & (2\%,2) & (2\%,1) & (2\%,1) & (2\%,1) & (2\%,1) & (2\%,1)\\\hline
+    Validation & 0.5593 & 0.5572 & 0.5580 & 0.5591 & 0.5596 & 0.5558\\\hline
+\end{tabular}
