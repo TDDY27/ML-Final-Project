@@ -8,11 +8,11 @@ Following are a summarize of our work.
     Model & Preprocess & Other Technique & Stage1 & Stage2 \\ \hline\hline
     KNN   & TODO   & None & TODO & TODO  \\ \hline
     Linear Regression & TA \& Diff \& Ratio & None & 0.58147 & 0.5482 \\ \hline
-    Logistic Regression & TODO & None & 0.571 & 0.5385 \\ \hline
+    Logistic Regression & None & None & 0.571 & 0.5385 \\ \hline
     SVM & TA & Bl \& Ba \& Op & 0.57887 & 0.53349 \\ \hline
     SVM (Linear) & TA & GS & 0.57142 & 0.50980 \\ \hline
     SVM (RBF) & TA & GS & 0.57110 & 0.54656 \\ \hline
-    Random Forest & TODO & None & 0.58989 & 0.5245 \\ \hline
+    Random Forest & None & None & 0.58989 & 0.5245 \\ \hline
     XGboost & TA & Op & 0.57725 & 0.54166 \\ \hline
     CATboost & DSS & Op & 0.57985 & 0.54493 \\ \hline
     \end{tabular}
@@ -31,6 +31,12 @@ Corresponding Abbreviation : \\
 %     \item[Op] Optuna  
 % \end{itemize}
 
-\subsubsection*{Model Selection and Result Analysis}
+\subsection*{Model Selection and Result Analysis}
 \par We suggest that you should use our Random Forest model for same season prediction and our Linear Regression model for stage2. 
-\par Noted that we have done Diff \& Ratio Technique on our data in the Linear Regression model. This give a inspire that using our Diff \& Ratio pre process, we can make data more linear separable (given that Linear SVM that only do Team Attribute preprocess doesn't give a as well result).
+\par Noted that we have done Diff \& Ratio Technique on our data in the Linear Regression model. This give a inspire that using our Diff \& Ratio pre process, we can make data more linear separable (given that Linear SVM that only do Team Attribute preprocess doesn't give a as well result). 
+\par We also found that using the validation cutting strategy we've used in CATboost(we call it date strategy since it cut validation data by date) with a parameter searching algorithm (such as Optuna) can give a better result than random validation strategy.
+
+\subsection*{Future Improvement}
+\par In some of our model, we didn't use Optuna to search for best parameter due to the limit of time and  computing resources. However, this will definitely give us a better result. 
+\par Further more, we should use date strategy to decide our validation data and use that to do parameter search. This may make our model better at a specific task like same season prediction or new season prediction.
+\par In the future, we should also consider use Diff \& Ratio preprocess on more model. Specifically, we should definitely try it on Linear SVM since it gives a good linear separable property. 
